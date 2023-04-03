@@ -1,0 +1,61 @@
+1. Virtual DOM vs real DOM, what is diffing algorithm and reconciliation, why does React use virtual DOM?
+
+Real DOM is the structural representation of all the nodes in a HTML document.
+Vitual DOM is a lightweight representation of the real DOM.
+Diffing algorithm is used to find  the differences between the real DOM and the virtual DOM.
+Reconciliation is the process where these differences are reconciled by updating the real DOM.
+Virtual DOM is lightweight and fast.
+
+2. React lifecycle methods, 3 stages, how and why do we use them
+
+Mounting: constructor() -> getDerivedStateFromProps() -> render() -> componentDidMount()
+Updating: getDerivedStateFromProps() -> shouldComponentUpdate() -> render() -> getSnapshotBeforeUpdate() -> componentDidUpdate()
+Unmounting: componentWillUnmount()
+
+componentDidMount():
+    This method is called after the component has been rendered for the first time.
+    We can fetch data here.
+shouldComponentUpdate():
+    This method is called before the rendering but after the state change.
+    We use it to determine whether or not to re-render
+componentDidUpdate():
+    This method is called after the re-rendering.
+    We can fetch additional data here which are only required because of some specific udpates.
+componentWillUnmount():
+    This method is called beofore the component is removed.
+    We can do some analytics or clean-up here.
+
+3. The purpose of using the key attribute when we use map in JSX
+
+The key attribute allows React to differentiate among the same HTML elements in a list
+so that React can better update the list.
+
+4. Ways of triggering component update
+
+state changes, props changes, parent component updates, forceUpdate() calls
+
+5. What is HOC and higher order function?
+
+HOC is a function that takes a component has a parameter, wraps that component inside an outer component,
+and returns the outer component.
+HOF is a function that takes a function as an argument, wraps that function, and returns the wrapped function.
+
+6. What/why custom hooks?
+
+A custom hook is a hook defined by the developers themselves according to the specific needs of the program.
+A custom hook usually contains some logics reusuable across different components.
+
+7. What is the “children” props?
+
+The "children" props are the chilren (nested) components of a component.
+
+8. what/why React.memo, useMemo, useCallback
+
+React.memo is a HOC.
+We use React.memo to do memoization and avoid unnecessary rerendering.
+
+useMemo is a hook.
+We use it to do memoization for the outputs of function calls in functional components.
+
+useCallback is a hook.
+We use it to do memoize the reference to a function.
