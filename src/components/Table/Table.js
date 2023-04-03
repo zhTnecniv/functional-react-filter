@@ -5,6 +5,7 @@ function Table(props) {
     const { data, selectedRegion, selectedModel } = props;
     return (
         <div className={styles.table}>
+            <Row fontWeight={"bold"} region={"region"} model={"model"} sales={"sales"} />
             {
                 data.filter(
                     item => {
