@@ -10,6 +10,9 @@ function App() {
 
 	return (
 		<div className={styles.app}>
+			<div style={{fontSize: "30px", marginBottom: "20px"}}>
+				Filter App
+			</div>
 			<FilterBox data={data}
 				selectedRegion={selectedRegion}
 				selectedModel={selectedModel}
